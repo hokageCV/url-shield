@@ -4,6 +4,10 @@ const keywordListDiv = document.getElementById("keyword-list");
 
 document.addEventListener("DOMContentLoaded", () => {
     renderKeywordList();
+
+    chrome.storage.local.get(["redirectUrl"], (data) => {
+        redirectUrlInput.placeholder = data.redirectUrl;
+    });
 });
 
 redirectUrlInput.addEventListener("keydown", async (e) => {

@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener(async (e) => {
         /**
          * @param {string} redirectURL - URL for redirection
          */
-        await chrome.storage.local.set({ redirectURL: "" });
+        await chrome.storage.local.set({ redirectUrl: "" });
 
         /**
          * @param {string[]} keywords - array of keywords

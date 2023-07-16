@@ -1,44 +1,25 @@
 :root {
-    /* --text: #050505;
-    --background: #9fb5c1;
-    --primary: #333c46;
-    --secondary: #708ea0;
-    --accent: #c04b0c; */
-
-    --text: #eaeff6;
-    --background: #40505e;
-    --primary: #bc9262;
-    --secondary: #19190b;
-    --accent: #a84b48;
-
-    /* ================ */
-    --baseBG: var(--background);
-    --baseText: var(--text);
-    --navBG: var(--accent);
-    --navText: var(--text);
-    --cardBG: #c04b0c;
-    --cardBorder: #02a4d8;
-    --inputBG: #708ea0;
-    --inputText: var(--text);
-    --placeholderText: #333c46;
+    --navBG: #37466c;
+    --navText: #f7ce68;
+    --mainText: #110f09;
+    --cardBG: #c3bcdc;
+    --cardBorder: #457887;
+    --inputBG: #9d8fc3;
+    --placeholderText: #645285;
+    --deleteBtnBG: #9282bc;
 }
 
 html {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #9fb4c1;
-    padding: 20px;
 }
 
 body {
-    width: 300px;
+    width: 350px;
     margin: 0;
     padding: 0;
-    background-color: var(--baseBG);
-    color: var(--baseText);
+
+    /* gradient from https://omatsuri.app/gradient-generator  */
+    background-image: linear-gradient(135deg, #fbab7e 10%, #f7ce68 90%);
 }
 
 /* ======================================================= */
@@ -73,14 +54,18 @@ main {
     justify-content: center;
     align-items: center;
 }
+label {
+    color: var(--mainText);
+}
 
 input {
     background-color: var(--inputBG);
-    color: var(--inputText);
+    color: var(--mainText);
 
     border: none;
-    padding: 5px;
-    margin: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px;
     width: 90%;
 }
 input::placeholder {
@@ -92,17 +77,57 @@ input::placeholder {
 .card {
     background-color: var(--cardBG);
     border: 2px solid var(--cardBorder);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 4px 8px;
     margin: 5px;
-    width: 90%;
+    width: 75%;
+}
+
+#keyword-list p {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    text-align: center;
+}
+
+#keyword-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 0px;
+
+    padding: 0px;
+    margin-bottom: 6px;
+    overflow-y: scroll;
+    min-height: 50px;
+    max-height: 150px;
+}
+
+.card > .keyword-list-item {
+    padding: 3px 6px;
+    margin: 0px;
 }
 
 .keyword-list-item {
+    width: 150px;
+    font-size: 12px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    padding: 5px;
+    padding: 3px 6px;
+    margin: 0px;
+    border: 1px solid var(--inputBG);
+    border-radius: 10px;
+}
+
+.keyword-list-item button {
+    background-color: var(--deleteBtnBG);
+    border: 1px solid var(--inputBG);
+    border-radius: 100%;
+    padding: 2px 3px;
+    cursor: pointer;
 }
