@@ -1,13 +1,25 @@
-const redirectUrlBtn = document.getElementById("redirect-url-btn");
-const addKeywordBtn = document.getElementById("add-keyword-btn");
+const redirectUrlInput = document.getElementById("redirect-url-input");
+const addKeywordInput = document.getElementById("add-keyword-input");
 
-const contentBtn = document.getElementById("content-btn");
-contentBtn.addEventListener("click", () => {
-    const message = { command: "change content text color" };
+redirectUrlInput.addEventListener("keydown", async (e) => {
+    let keyCode = e.code || e.key;
+    if (keyCode === "Enter") {
+        e.preventDefault();
 
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        for (const tab of tabs) {
-            chrome.tabs.sendMessage(tab.id, message);
+        if (isURL(redirectUrlInput.value)) {
+            await chrome.storage.local.set({ redirectUrl: redirectUrlInput.value });
+
+            redirectUrlInput.placeholder = redirectUrlInput.value;
+            redirectUrlInput.value = "";
         }
-    });
+    }
 });
+
+function isURL(str) {
+    try {
+        new URL(str);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
