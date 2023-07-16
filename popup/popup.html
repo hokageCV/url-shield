@@ -1,53 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" class="flex flex-col items-center justify-center bg-[#40505E]">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            text: "#eaeff6",
-                            background: "#1d232a",
-                            primary: "#bc9262",
-                            secondary: "#19190b",
-                            accent: "#a84b48",
-                        },
-                    },
-                },
-            };
-        </script>
-
+        <link rel="stylesheet" href="./popup.css" />
         <title>Popup</title>
     </head>
-    <body class="bg-background m-4 p-0 w-64 text-text rounded-lg box-border">
-        <nav class="text-center bg-accent">
-            <p class="text-xl">URL Shield</p>
+    <body>
+        <nav>
+            <p>URL Shield</p>
         </nav>
         <main>
             <!-- redirect URL  -->
-            <div class="m-2 p-2 rounded-md border border-1 border-primary max-w-min">
-                <label class="p-0">Redirect URL</label>
-                <input type="text" id="redirect-url-input" class="p-1 rounded-md text-secondary" />
+            <div class="card">
+                <label>Redirect URL</label>
+                <input type="text" id="redirect-url-input" />
             </div>
 
             <!-- URL List  -->
-            <div class="m-2 p-2 rounded-md border border-1 border-primary w-[300px]">
-                <p class="text-center text-primary">Keywords</p>
+            <div class="card">
+                <p>Keywords</p>
                 <ul id="keyword-list"></ul>
-
-                <div>
-                    <label class="p-0">Add keyword</label>
-                    <input type="text" id="add-keyword-input" class="p-0 rounded-md" />
-                </div>
             </div>
 
-            <!-- <button id="new-tab-btn">Change new tab Background</button> -->
-            <!-- <button id="content-btn">Change content text color</button> -->
+            <div class="card">
+                <label>Add keyword</label>
+                <input type="text" id="add-keyword-input" />
+            </div>
         </main>
     </body>
     <script src="./popup.js"></script>

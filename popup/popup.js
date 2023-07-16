@@ -1,5 +1,10 @@
 const redirectUrlInput = document.getElementById("redirect-url-input");
 const addKeywordInput = document.getElementById("add-keyword-input");
+const keywordList = document.getElementById("keyword-list");
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderKeywordList();
+});
 
 redirectUrlInput.addEventListener("keydown", async (e) => {
     let keyCode = e.code || e.key;
@@ -15,6 +20,7 @@ redirectUrlInput.addEventListener("keydown", async (e) => {
     }
 });
 
+// =========================================================
 function isURL(str) {
     try {
         new URL(str);
