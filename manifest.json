@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "url-blocker",
+    "name": "url-shield",
     "version": "0.0.1",
     "description": "make some tasks easier",
     "icons": {
@@ -17,7 +17,7 @@
     },
     "action": {
         "default_popup": "./popup/popup.html",
-        "default_title": "Extension",
+        "default_title": "URL Shield",
         "default_icon": "./assets/icon48.png"
     }
 }
