@@ -1,0 +1,57 @@
+:root {
+    /* --text: #050505;
+    --background: #9fb5c1;
+    --primary: #333c46;
+    --secondary: #708ea0;
+    --accent: #c04b0c; */
+
+    --text: #eaeff6;
+    --background: #1d232a;
+    --primary: #bc9262;
+    --secondary: #19190b;
+    --accent: #a84b48;
+
+    --baseBG: var(--background);
+    --baseText: var(--text);
+    --navBG: var(--accent);
+    --navText: var(--text);
+    --mainBG: var(--background);
+}
+
+body {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--baseBG);
+    color: var(--baseText);
+}
+
+nav {
+    background-color: var(--navBG);
+    padding: 1px;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav p {
+    font-size: 22px;
+    color: var(--navText);
+
+    margin: 1px;
+    padding: 5px;
+    height: 30px;
+}
+
+main {
+    font-size: 16px;
+    color: var(--mainText);
+    background-color: var(--mainBG);
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
